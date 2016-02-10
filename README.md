@@ -12,7 +12,7 @@ Parceque je voulais un système permettant de réorganiser des éléments en gri
 >
 > -- <cite>Thomas</cite>
 
-[Démonstration](https://rawgit.com/Grafikart/ReorderJS/master/index.html)
+[Démonstration](http://grafikart.github.io/ReorderJS/index.html)
 
 ## Comment que ça marche ?
 
