@@ -1,0 +1,22 @@
+{
+  "name": "teemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.11.1",
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.0",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-watch": "^4.3.5",
+    "jshint": "^2.9.1"
+  },
+  "devDependencies": {
+    "jshint-stylish": "^2.1.0"
+  }
+}
