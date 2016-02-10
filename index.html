@@ -5,18 +5,51 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css">
-    <link rel="stylesheet" href="css/app.css">
+    <style>
+        #sort1 .column{
+            transition: 0.3s;
+        }
+        .is-dragged{
+            opacity: 0.5;
+            z-index: 9000;
+        }
+
+        .masthead.segment {
+            padding: 2em 0em; }
+
+        .masthead .logo.item img {
+            margin-right: 1em; }
+
+        .masthead .ui.menu .ui.button {
+            margin-left: 0.5em; }
+
+        .masthead h1.ui.header {
+            padding-top: 1em;
+            margin-bottom: 0em;
+            font-size: 4em;
+            font-weight: normal; }
+
+        .masthead h2 {
+            font-size: 1.7em;
+            font-weight: normal;
+            padding-bottom: 2em;
+        }
+    </style>
 </head>
 <body>
 <div class="ui inverted vertical masthead center aligned segment">
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
+    <div class="ui container">
+        <div class="ui large secondary inverted pointing menu">
+            <a class="item"><i class="newspaper icon"></i> Article (pas encore dispo)</a>
+            <div class="right item">
+                <a href="https://github.com/Grafikart/ReorderJS"><i class="github icon"></i> Github</a>
+            </div>
+        </div>
+    </div>
     <div class="ui text container">
         <h1 class="ui inverted header">Réorganisation</h1>
         <h2>en drag &amp; drop</h2>
     </div>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
 </div>
 
 <p>&nbsp;</p>
@@ -207,9 +240,7 @@
 </div>
 
 <p>lorem</p>
-<script src="js/interact.js"></script>
-<script src="js/lodash.js"></script>
-<script src="js/sorter.js"></script>
+<script src="dist/Sortable.js"></script>
 <script>
     sortable = new Sortable(document.querySelector('#sort1'));
     sortable.success = function(results){
