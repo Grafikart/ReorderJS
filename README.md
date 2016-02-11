@@ -2,19 +2,17 @@
 
 ## Pourquoi cette librairie ?
 
-Parceque je voulais un système permettant de réorganiser des éléments en grille
+Parce que je voulais un système permettant de réorganiser des éléments en grille
 
 - Qui supporte le mobile
 - Qui ne rame pas (60fps)
 - Qui soit animé
 
 > je suis comme saint thomas, je ne crois que ce que je vois
->
-> -- <cite>Thomas</cite>
 
 [Démonstration](http://grafikart.github.io/ReorderJS/index.html)
 
-## Comment que ça marche ?
+## Comment ça marche ?
 
 Le code html doit être comme suivi
 
