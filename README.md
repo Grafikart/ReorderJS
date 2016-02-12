@@ -2,21 +2,21 @@
 
 ## Pourquoi cette librairie ?
 
-Parceque je voulais un système permettant de réorganiser des éléments en grille
+Parce que je voulais un système permettant de réorganiser des éléments en grille :
 
-- Qui supporte le mobile
-- Qui ne rame pas (60fps)
-- Qui soit animé
+- qui supporte le mobile ;
+- qui ne rame pas (60fps) ;
+- qui soit animé.
 
-> je suis comme saint thomas, je ne crois que ce que je vois
+> Je suis comme saint Thomas, je ne crois que ce que je vois.
 >
 > -- <cite>Thomas</cite>
 
 [Démonstration](http://grafikart.github.io/ReorderJS/index.html)
 
-## Comment que ça marche ?
+## Comment ça marche ?
 
-Le code html doit être comme suivi
+Le code html doit être comme suit :
 
 ```html
 <div data-sortable=".item" id="sort1">
@@ -26,7 +26,7 @@ Le code html doit être comme suivi
 </div>
 ```
 
-Et on intialise le Sorter de la manière suivante
+Puis on intialise le Sorter de la manière suivante :
 
 ```js
 sortable = new Sortable(document.querySelector('#sort1'));
