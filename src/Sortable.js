@@ -89,7 +89,7 @@
         this.item_height = Math.floor(rect.height);
         this.cols = Math.floor(this.element.offsetWidth / this.item_width);
         this.element.style.height = (this.item_height * Math.ceil(this.items.length / this.cols)) + "px";
-        for(var i = 0; i < this.items.length; i++) {
+        for(var i = 0, x = this.items.length; i < x; i++) {
             var item = this.items[i];
             item.style.position = "absolute";
             item.style.top = "0px";
@@ -98,7 +98,7 @@
             this.moveItem(item, item.dataset.position);
         }
         window.setTimeout(function(){
-             for(var i = 0; i < self.items.length; i++) {
+             for(var i = 0, x = self.items.length; i < x; i++) {
                 var item = self.items[i];
                 item.style.transitionDuration = null;
              }
@@ -167,7 +167,7 @@
     * @param end
     */
     Sortable.prototype.swap = function(start, end){
-        for(var i = 0; i < this.items.length; i++) {
+        for(var i = 0, x = this.items.length; i < x; i++) {
             var item = this.items[i];
             if(!item.classList.contains("is-dragged")){
                 var position = parseInt(item.dataset.position, 10);
@@ -198,7 +198,7 @@
     */
     Sortable.prototype.sendResults = function(){
         var results = {};
-        for(var i = 0; i < this.items.length; i++) {
+        for(var i = 0, x = this.items.length; i < x; i++) {
             var item = this.items[i];
             results[item.dataset.id] = item.dataset.position;
         }
