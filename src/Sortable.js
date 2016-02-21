@@ -17,7 +17,7 @@
 })(this, function(interact, throttle, debounce){
 
     var Sortable = function(element, scrollable){
-        this.scrollable = scrollable || window.document.body;
+        this.scrollable = scrollable || null;
         this.element = element;
         this.items   = this.element.querySelectorAll(this.element.dataset.sortable);
         this.element.style.position = "relative";
@@ -41,7 +41,7 @@
             inertia: false,
             manualStart: ("ontouchstart" in window) || window.DocumentTouch && window.document instanceof window.DocumentTouch,
             autoScroll: {
-                container: this.scrollable === window.document.body ? null : this.scrollable,
+                container: this.scrollable,
                 margin: 50,
                 speed: 600
             },
@@ -61,7 +61,7 @@
                 x: e.clientX - r.left,
                 y: e.clientY - r.top
             };
-            self.scrollTopStart = self.scrollable.scrollTop;
+            self.scrollTopStart = self.getScrollTop();
         }).on("dragend", function(e){
             e.target.classList.remove("is-dragged");
             e.target.style.transitionDuration = null;
@@ -112,7 +112,7 @@
     Sortable.prototype.move = function(e){
         var p = this.getXY(this.startPosition);
         var x = p.x + e.clientX - e.clientX0;
-        var y = p.y + e.clientY - e.clientY0 + this.scrollable.scrollTop - this.scrollTopStart;
+        var y = p.y + e.clientY - e.clientY0 + this.getScrollTop() - this.scrollTopStart;
         e.target.style.transform = "translate3D(" + x + "px, " + y + "px, 0)";
         var oldPosition = parseInt(e.target.dataset.position, 10);
         var newPosition = this.guessPosition(x + this.offset.x, y + this.offset.y);
@@ -204,6 +204,14 @@
         }
         this.success(results);
     };
+
+    /**
+     * Get container scrollTop
+     * (fix bug in chrome, body.scrollTop is deprecated)
+     */
+    Sortable.prototype.getScrollTop = function() {
+        return this.scrollable ? this.scrollable.scrollTop : (window.document.documentElement.scrollTop || window.document.body.scrollTop);
+    }
 
     return Sortable;
 });
